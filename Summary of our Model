@@ -1,0 +1,69 @@
+## SUMMARY 
+
+The dataset used, we got it from KAGGLE website "yield_df.csv"
+
+# SDG problem addressed.
+
+Primary SDG Addressed: SDG 2 - Zero Hunger
+
+Target 2.4: "By 2030, ensure sustainable food production systems and implement resilient agricultural practices that increase productivity and production, that help maintain ecosystems,
+that strengthen capacity for adaptation to climate change, extreme weather, drought, flooding and other disasters and that progressively improve land and soil quality."
+
+How the model contributes:
+Increases Productivity and Production: By providing more accurate yield forecasts, farmers can make better decisions about planting, irrigation, fertilization, and pest control, leading to potentially higher yields.
+Strengthens Capacity for Adaptation to Climate Change and Extreme Weather:
+The model uses real-time weather data and incorporates metrics like GDD. This helps in understanding how current weather conditions might impact yield, 
+allowing for more informed and adaptive responses to changing climate patterns and extreme events.
+Supports Resilient Agricultural Practices:
+Better predictions enable more proactive planning and resource management, making farming systems more resilient to environmental shocks.
+Secondary SDG Connections:
+
+SDG 8 - Decent Work and Economic Growth
+
+Target 8.4: "Improve progressively, through 2030, global resource efficiency in consumption and production and endeavor to decouple economic growth from environmental degradation, 
+in accordance with the 10-Year Framework of Programmes on Sustainable Consumption and Production, with developed countries taking the lead."
+
+Target 8.6: "By 2020, reduce the proportion of youth not in employment, education or training." (While less direct, supporting the agricultural sector can create economic opportunities).
+
+How the model contributes:
+
+Increases Resource Efficiency: More accurate yield predictions help farmers optimize the use of inputs like water, fertilizers, and pesticides, leading to greater resource efficiency and potentially reducing environmental impact.
+Boosts Economic Stability for Farmers: Reducing uncertainty in yield forecasts helps farmers plan financially, secure loans, and make better decisions about selling their produce, contributing to their economic stability.
+SDG 13 - Climate Action
+
+Target 13.1: "Strengthen resilience and adaptive capacity to climate-related hazards and natural disasters in all countries."
+
+Target 13.3: "Improve education, awareness-raising and human and institutional capacity on climate change mitigation, adaptation, impact reduction and early warning."
+
+How the model contributes:
+
+Strengthens Resilience and Adaptive Capacity: As mentioned under SDG 2, the model's use of real-time weather data and its ability to forecast yield under varying conditions directly supports adaptation to climate change impacts.
+Supports Impact Reduction and Early Warning: By providing forecasts, the model can serve as an early warning system for potential low yields due to adverse conditions, allowing for interventions or preparation.
+
+### APROACH USED
+
+Our machine learning approach is based on supervised learning using an XGBoost Regressor model. 
+We chose XGBoost for its strong performance on structured data and its ability to handle both numerical and categorical features.
+We trained the model on historical data, including weather, crop type, and engineered features like Growing Degree Days and Soil Moisture. 
+We optimized the model using Grid Search with cross-validation to ensure it performs well on new, unseen data.
+
+## Results and Ethical consideration
+
+Summary of Model Results and Ethical Considerations
+
+Model Performance Summary:
+
+The developed XGBoost Regressor model demonstrates strong predictive capabilities for crop yield. 
+Evaluation metrics show a Training R² of 1.00 (MAE ~1470 kg/ha, RMSE ~2318 kg/ha), indicating a perfect fit to the training data. On the unseen testing data, the model achieved an R² of 0.98 (MAE ~4807 kg/ha, RMSE ~10762 kg/ha).
+While the significant difference between training and testing metrics suggests some overfitting to the training data, the model still explains a very high percentage (98%) of the variance in test set yield, 
+demonstrating excellent generalization performance on unseen data.
+
+Ethical Considerations:
+
+Deployment of crop yield prediction models necessitates careful consideration of ethical implications. Key factors include:
+
+Data Bias: Ensuring the representativeness and diversity of training data to prevent biased predictions that could disadvantage certain farmers or regions.
+Access and Equity: Promoting equitable access to this technology to ensure its benefits are available to all stakeholders, including smallholder farmers.
+Transparency: Exploring methods to provide users with insights into why a prediction was made to build trust and facilitate informed decision-making.
+Data Privacy: Implementing robust measures for the secure handling and storage of sensitive agricultural and farmer data.
+Addressing these ethical considerations is vital for the responsible and beneficial application of the model in the agricultural sector.
